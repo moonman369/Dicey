@@ -1,5 +1,6 @@
 'use strict'
-//Game: Dicey
+/*---------Game: Dicey---------*/
+/*-------Author: MoonMan-------*/
 
 //Document Objects
 
@@ -13,9 +14,11 @@ const btnHold = document.querySelector('.btn--hold')
 
 //Starting conditions
 diceEl.classList.add('hidden')
+document.getElementById('victory--0').classList.add('hidden')
+document.getElementById('victory--1').classList.add('hidden')
 
 //State variables
-const scores = [0, 0]
+let scores = [0, 0]
 let currentScore = 0
 let activePlayer = 0
 
@@ -54,21 +57,78 @@ const holdHandler = () => {
   scores[activePlayer] += currentScore
   document.getElementById(`score--${activePlayer}`).textContent =
     scores[activePlayer]
+
   //2. Checking if global score >= 100
-  if (scores[activePlayer] >= 100) {
+  if (scores[activePlayer] >= 10) {
     //2.a Finish the game
+
+    //i. Add Winner template
     document
       .querySelector(`.player--${activePlayer}`)
       .classList.add('player--winner')
+
+    //ii. Remove active player template
     document
       .querySelector(`.player--${activePlayer}`)
       .classList.remove('player--active')
+
+    //iii. Set current to zero
+    document.getElementById(`current--${activePlayer}`).textContent = 0
+
+    //iv. Reveal Victory tag
+    document
+      .getElementById(`victory--${activePlayer}`)
+      .classList.remove('hidden')
+
+    //v. Disable `ROLL` and `HOLD` buttons
+    document.getElementById('roll').disabled = true
+    document.getElementById('hold').disabled = true
   } else {
     //2.b Switch Player
     switchPlayer()
   }
 }
 
-//Rolling Dice
+//Click event handler for `NEW GAME`
+const handleNewGame = () => {
+  //1. Removing Winner template
+  document
+    .querySelector(`.player--${activePlayer}`)
+    .classList.remove('player--winner')
+
+  //2. Hide dice
+  diceEl.classList.add('hidden')
+
+  //3. Hide Victory tag from previous game
+  document.getElementById(`victory--${activePlayer}`).classList.add('hidden')
+
+  //4. Set active player to PLAYER 1 (player--0)
+  activePlayer = 0
+  document
+    .querySelector(`.player--${activePlayer}`)
+    .classList.add('player--active')
+
+  //5. Set current scores to 0
+  currentScore = 0
+  document.getElementById('current--0').textContent = currentScore
+  document.getElementById('current--1').textContent = currentScore
+
+  //6. Set scores to 0
+  scores = [0, 0]
+  console.log(scores)
+  document.getElementById('score--0').textContent = scores[0]
+  document.getElementById('score--1').textContent = scores[1]
+
+  //7. Re-enable `ROLL` and `HOLD` buttons
+  document.getElementById('roll').disabled = false
+  document.getElementById('hold').disabled = false
+}
+
+//`ROLL`
 btnRoll.addEventListener('click', rollHandler)
+
+//`HOLD`
 btnHold.addEventListener('click', holdHandler)
+
+//`NEW GAME`
+btnNew.addEventListener('click', handleNewGame)
