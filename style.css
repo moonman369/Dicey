@@ -16,7 +16,7 @@ body {
   font-weight: 400;
   height: 100vh;
   color: #333;
-  background-image: linear-gradient(to top left, #30b63b 0%, #6e85ec 100%);
+  background-image: linear-gradient(to top left, #21a32c 0%, #5772ec 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,7 +59,12 @@ main {
 .score {
   font-size: 8rem;
   font-weight: 300;
-  color: #2833ce;
+  color: #3c3eb3;
+  margin-bottom: auto;
+}
+
+.victory {
+  font-size: 5rem;
   margin-bottom: auto;
 }
 
@@ -67,14 +72,15 @@ main {
   background-color: rgba(255, 255, 255, 0.192);
 }
 .player--active .name {
-  font-weight: 700;
+  font-weight: bolder;
 }
 .player--active .score {
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .player--active .current {
   opacity: 2;
+  font-weight: 600;
 }
 
 .current {
@@ -104,18 +110,17 @@ main {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  color: #444;
+  color: rgb(20, 20, 20);
   background: none;
   border: none;
   font-family: inherit;
   font-size: 1.8rem;
   text-transform: uppercase;
   cursor: pointer;
-  font-weight: 400;
-  transition: all 0.2s;
-
-  background-color: white;
-  background-color: rgba(255, 255, 255, 0.6);
+  font-weight: 800;
+  transition: all 0.3s;
+  background-color: black;
+  background-color: transparent;
   backdrop-filter: blur(10px);
 
   padding: 0.7rem 2.5rem;
@@ -158,13 +163,30 @@ main {
 }
 
 .player--winner {
-  background-color: #2f2f2f;
+  background-color: #2e2d2d;
 }
 
 .player--winner .name {
-  text-shadow: #6e85ec;
+  text-shadow: #50e6a7;
+  font-weight: 900;
+  color: #1ec25d;
+}
+
+.player--winner .victory {
+  text-shadow: #50e6a7;
+  font-weight: 900;
+  color: #1ec25d;
+}
+
+.player--winner .score {
+  text-shadow: #50e6a7;
   font-weight: 700;
-  color: #1dbe53;
+  color: #1ec25d;
+}
+
+.player--winner .current {
+  background-color: #1ec25d;
+  font-weight: 700;
 }
 
 .hidden {
