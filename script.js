@@ -11,6 +11,11 @@ const diceEl = document.querySelector('.dice')
 const btnNew = document.querySelector('.btn--new')
 const btnRoll = document.querySelector('.btn--roll')
 const btnHold = document.querySelector('.btn--hold')
+const btnInstruc = document.querySelector('.btn--instruc')
+
+//Instruction Modal
+const modal = document.querySelector('.modal')
+const overlay = document.querySelector('.overlay')
 
 //Starting conditions
 diceEl.classList.add('hidden')
@@ -59,7 +64,7 @@ const holdHandler = () => {
     scores[activePlayer]
 
   //2. Checking if global score >= 100
-  if (scores[activePlayer] >= 10) {
+  if (scores[activePlayer] >= 100) {
     //2.a Finish the game
 
     //i. Add Winner template
@@ -124,6 +129,17 @@ const handleNewGame = () => {
   document.getElementById('hold').disabled = false
 }
 
+//Click event handler for `INSTRUCTIONS`
+const handleOpenInstuctions = () => {
+  modal.classList.remove('hidden')
+  overlay.classList.remove('hidden')
+}
+
+//Event handler for close instructions
+const handleCloseInstuctions = () => {
+  modal.classList.add('hidden')
+  overlay.classList.add('hidden')
+}
 //`ROLL`
 btnRoll.addEventListener('click', rollHandler)
 
@@ -132,3 +148,19 @@ btnHold.addEventListener('click', holdHandler)
 
 //`NEW GAME`
 btnNew.addEventListener('click', handleNewGame)
+
+//'INSTRUCTIONS'
+//Open
+btnInstruc.addEventListener('click', handleOpenInstuctions)
+//Close
+//Click X
+document
+  .querySelector('.close-modal')
+  .addEventListener('click', handleCloseInstuctions)
+//Click overlay
+overlay.addEventListener('click', handleCloseInstuctions)
+//Keydown ESC
+document.addEventListener('keydown', function (e) {
+  if (e.key == 'Escape' && !modal.classList.contains('hidden'))
+    handleCloseInstuctions()
+})
