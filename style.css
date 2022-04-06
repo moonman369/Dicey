@@ -110,7 +110,7 @@ main {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  color: rgb(20, 20, 20);
+  color: rgb(255, 255, 255);
   background: none;
   border: none;
   font-family: inherit;
@@ -119,9 +119,9 @@ main {
   cursor: pointer;
   font-weight: 800;
   transition: all 0.3s;
-  background-color: black;
-  background-color: transparent;
-  backdrop-filter: blur(10px);
+  background-color: #1f1e1e;
+  opacity: 0.7;
+  backdrop-filter: (1%);
 
   padding: 0.7rem 2.5rem;
   border-radius: 50rem;
@@ -134,14 +134,26 @@ main {
   margin-right: 0.7rem;
 }
 
+.btn--instruc {
+  top: 2rem;
+}
+
+.link {
+  color: #5a81ee;
+}
+
 .btn--new {
-  top: 4rem;
+  top: 8.8rem;
 }
 .btn--roll {
   top: 39.3rem;
+  background-color: #6931d1;
+  opacity: 0.8;
 }
 .btn--hold {
   top: 46.1rem;
+  background-color: #26c797;
+  opacity: 0.8;
 }
 
 .btn:active {
@@ -156,14 +168,14 @@ main {
 .dice {
   position: absolute;
   left: 50%;
-  top: 16.5rem;
+  top: 22rem;
   transform: translateX(-50%);
   height: 10rem;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
 }
 
 .player--winner {
-  background-color: #2e2d2d;
+  background-color: #1f1e1e;
 }
 
 .player--winner .name {
@@ -191,4 +203,55 @@ main {
 
 .hidden {
   display: none;
+}
+
+/*MODAL CLASSES*/
+
+.show-modal {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1.75rem 3.5rem;
+  margin: 10em 2rem;
+  border: none;
+  background-color: rgb(56, 53, 53);
+  color: #fff;
+  border-radius: 10rem;
+  cursor: pointer;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  font-size: medium;
+  color: rgb(233, 227, 227);
+  background-color: rgb(56, 53, 53);
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(7px);
+  z-index: 5;
 }
