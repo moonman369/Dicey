@@ -1,5 +1,5 @@
 # Dicey
-A simple, interactive, multiplayer, dice game 
+A simple, interactive, multiplayer, dice game. 
 Created using,
 > Backend: JavaScript
 
