@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css" />
-    <title>Dicey</title>
+    <title>Pig Game</title>
   </head>
   <body>
     <main>
@@ -30,9 +30,33 @@
 
       <img src="dice-5.png" alt="Playing dice" class="dice" />
       <button class="btn btn--new" id="new--game">🔄 New game</button>
+      <button class="btn btn--instruc" id="instruc">📝 Instructions</button>
       <button class="btn btn--roll" id="roll">🎲 Roll dice</button>
       <button class="btn btn--hold" id="hold">📥 Hold</button>
     </main>
+    <div class="modal hidden">
+      <button class="close-modal">&times;</button>
+      <h1 class="header">📝 INSTRUCTIONS</h1>
+      <br>
+        Welcome to Dicey!!! This is a 2 player dice game.
+        <br>
+        <br>
+        <br>
+        <h3>CONTROLS:</h3>
+        <br>🎲 ROLL DICE -> A random dice roll that gives any number between 1 and 6 (both inclusive).
+        <br>📥 HOLD -> Hold the current score and end your turn.
+        <br>🔄 NEW GAME -> Reset the scores and start a new game.
+        <br><br><br>
+        <h3>HOW TO PLAY:</h3>
+        <br>1. Every 'ROLL' increases your 'CURRENT SCORE' by the amount you have rolled but comes back to `0` if you roll a &ensp;`1` and your turn gets over. <br>2. Basically, you can keep rolling the dice till you roll a 1.<br> 3. Note, that your current score does not add to your actual score unless you 'HOLD' it. But once you 'HOLD' a score your turn also gets over<br> 4. The first player to reach a score of 100, wins the game. 
+        <br>
+        <br />Enjoy my other game 
+        <a class="link" href="https://moonman369.github.io/Guess-What/"
+          >Guess What</a
+        >
+      </p>
+    </div>
+    <div class="overlay hidden"></div>
     <script src="script.js"></script>
   </body>
 </html>
