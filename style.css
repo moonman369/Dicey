@@ -16,7 +16,7 @@ body {
   font-weight: 400;
   height: 100vh;
   color: #333;
-  background-image: linear-gradient(to top left, #0eb4ac 0%, #6000ddd7 80%);
+  background-image: linear-gradient(to top left, #07bec4 0%, #a009c5d7 80%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,18 +48,18 @@ main {
 /* ELEMENTS */
 .name {
   position: relative;
-  font-size: 4rem;
+  font-size: 5rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   word-spacing: 2px;
-  font-weight: 300;
+  font-weight: 200;
   margin-bottom: 1rem;
 }
 
 .score {
   font-size: 8rem;
   font-weight: 300;
-  color: #7906a7;
+  color: #490085;
   margin-bottom: auto;
 }
 
@@ -84,7 +84,7 @@ main {
 }
 
 .current {
-  background-color: #1a1cac;
+  background-color: #351aac;
   opacity: 0.8;
   border-radius: 9px;
   color: #fff;
@@ -147,12 +147,12 @@ main {
 }
 .btn--roll {
   top: 39.3rem;
-  background-color: #6931d1;
+  background-color: #5b21c7;
   opacity: 0.8;
 }
 .btn--hold {
   top: 46.1rem;
-  background-color: #26c797;
+  background-color: #05c98e;
   opacity: 0.8;
 }
 
