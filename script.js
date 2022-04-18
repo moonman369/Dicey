@@ -69,7 +69,7 @@ const holdHandler = () => {
     scores[activePlayer];
 
   //2. Checking if global score >= 100
-  if (scores[activePlayer] >= 10) {
+  if (scores[activePlayer] >= 100) {
     //2.a Finish the game
 
     //i. Add Winner template

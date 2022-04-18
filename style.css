@@ -16,7 +16,7 @@ body {
   font-weight: 400;
   height: 100vh;
   color: #333;
-  background-image: linear-gradient(to top left, #07bec4 0%, #a009c5d7 80%);
+  background-image: linear-gradient(to top left, #9e08c4d7 0%, #bd732e 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,7 +27,7 @@ main {
   position: relative;
   width: 100rem;
   height: 60rem;
-  background-color: rgba(255, 255, 255, 0.089);
+  background-color: rgba(255, 255, 255, 0);
   backdrop-filter: blur(150px);
   filter: blur();
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
@@ -42,7 +42,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: all 0.75s;
+  transition: all 1s;
 }
 
 /* ELEMENTS */
@@ -69,18 +69,18 @@ main {
 }
 
 .player--active {
-  background-color: rgba(255, 255, 255, 0.192);
+  background-color: rgba(255, 255, 255, 0.281);
 }
 .player--active .name {
   font-weight: 900;
 }
 .player--active .score {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .player--active .current {
   opacity: 2;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .current {
